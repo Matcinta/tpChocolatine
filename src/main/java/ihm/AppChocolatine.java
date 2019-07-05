@@ -1,21 +1,15 @@
 package ihm;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 import java.util.Scanner;
 
-import service.ChocolatineService;
+
 import util.Constantes;
 
 
 public class AppChocolatine {
 
-    private ArrayList<Commande> listeCommandes = new ArrayList<Commande>();
-    private ArrayList<Livreur> listeLivreur = new ArrayList<Livreur>();
+    
     
     private Scanner scanner = new Scanner(System.in);
 
@@ -56,10 +50,7 @@ public class AppChocolatine {
                 break;
 
             case 3:
-                
-                //creerCommande();
-                
-                
+               creerCommande();
                 break;
 
             case 4:
@@ -122,24 +113,27 @@ public class AppChocolatine {
         
     }
     
-//    public void creerCommande() {
-//        
-//        int choix = 0;
-//        int quantite = 0;
-//        
-//        System.out.println("Selectionnez les articles que vous souhaitez commander (en selectionnant leur id): ");
-//        System.out.println(listeChocolatine);
-//        choix = scanner.nextInt();
-//        System.out.println("Selectionnez la quantité souhaitée: ");
-//        quantite = scanner.nextInt();
-//        
-//        Commande commande = new Commande();
-//        //commande.addArticle(choco, quantite);
+   public void creerCommande() {
+        
+        int choix = 0;
+        int quantite = 0;
+        
+        
+        System.out.println(Constantes.CHOCOLATINE_SERVICE.findAll());
+        System.out.println("Selectionnez les articles que vous souhaitez commander (en selectionnant leur id): ");
+        choix = scanner.nextInt();
+        
+        System.out.println("Selectionnez la quantité souhaitée: ");
+        quantite = scanner.nextInt();
+        
+        Commande commande = Constantes.COMMANDE_SERVICE.addCommande(choix, quantite);
+
         
        
                 
         
         
     }
+}
 
 
