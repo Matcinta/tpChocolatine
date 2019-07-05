@@ -21,7 +21,7 @@ public class AppChocolatine {
 
     public static void main(String[] args) {
         AppChocolatine app = new AppChocolatine();
-    
+   
         app.runApp();
 
     }
@@ -47,7 +47,7 @@ public class AppChocolatine {
 
             switch (choix) {
             case 1:
-                System.out.println();
+                System.out.println(Constantes.CHOCOLATINE_SERVICE.findAll());
                 break;
 
             case 2:

@@ -1,14 +1,15 @@
 package service;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+
+import javax.persistence.criteria.CriteriaQuery;
 
 import ihm.Chocolatine;
 import util.Constantes;
@@ -18,15 +19,23 @@ import util.Constantes;
 
 public class ChocolatineService {
     
-    private ArrayList<Chocolatine> listeChocolatine = new ArrayList<Chocolatine>();
+    private List<Chocolatine> listeChocolatine;
     
-    //private EntityManagerFactory emf = Constantes.EMF;
     
-   
     
+    public ChocolatineService() {
+        EntityManager em = Constantes.EMF.createEntityManager();
+        
+        listeChocolatine =  em.createQuery("from Chocolatine", Chocolatine.class).getResultList();
+     
+        
+    }
+
+
     public Chocolatine addChoco (String nom, float prix, float temperature, float poids) {
         
         EntityManager em = Constantes.EMF.createEntityManager();
+       
         
         Chocolatine choco = new Chocolatine(nom, prix, temperature, poids);
         
@@ -44,6 +53,12 @@ public class ChocolatineService {
     }   
     
     
-}
+    public List<Chocolatine> findAll() {
+        return listeChocolatine;
+        }
+    }
+    
+    
+
 
 

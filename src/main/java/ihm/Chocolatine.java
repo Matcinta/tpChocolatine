@@ -4,6 +4,8 @@ package ihm;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,14 +15,14 @@ public class Chocolatine {
 
     @Id
     @Column (name= "idChocolatine")
+    @GeneratedValue (strategy= GenerationType.IDENTITY)
     private int id;
     private String nom;
     private float prix; 
     private float temperature;
     private float poids;
     
-    
-    private static int COUNT = 1;
+
     
     
     
@@ -31,7 +33,6 @@ public class Chocolatine {
 
     public Chocolatine(String nom, float prix, float temperature, float poids) {
         super();
-        this.id = COUNT++;
         this.nom = nom;
         this.prix = prix;
         this.temperature = temperature;
