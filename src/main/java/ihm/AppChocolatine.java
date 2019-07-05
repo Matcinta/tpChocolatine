@@ -129,10 +129,6 @@ public class AppChocolatine {
         Commande commande = Constantes.COMMANDE_SERVICE.addCommande(choix, quantite);
 
         
-       
-                
-        
-        
     }
 }
 
