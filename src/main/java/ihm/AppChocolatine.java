@@ -1,6 +1,7 @@
 package ihm;
 
 
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -54,7 +55,8 @@ public class AppChocolatine {
                 break;
 
             case 4:
-
+            	System.out.println("Notre top 5 des chocolatines!");
+            	Constantes.COMMANDECHOCO_SERVICE.getTop5();
                 break;
 
             case 5:
@@ -130,6 +132,47 @@ public class AppChocolatine {
 
         
     }
+   
+//   public void creerCommandeMultiple() {
+//	   int choix = 0;
+//       int quantite = 0;
+//       char reponse=' ';
+//       
+//       
+//       System.out.println(Constantes.CHOCOLATINE_SERVICE.findAll());
+//       System.out.println("Selectionnez les articles que vous souhaitez commander (en selectionnant leur id): ");
+//       choix = scanner.nextInt();
+//       
+//       System.out.println("Selectionnez la quantité souhaitée: ");
+//       quantite = scanner.nextInt();
+//       
+//       Commande commande = Constantes.COMMANDE_SERVICE.addCommande(choix, quantite);
+//       
+//       
+//       do{//tant que reponse = O //boucle principale
+//           
+//    	   System.out.println(Constantes.CHOCOLATINE_SERVICE.findAll());
+//           System.out.println("Selectionnez les articles que vous souhaitez commander (en selectionnant leur id): ");
+//           choix = scanner.nextInt();
+//           
+//           System.out.println("Selectionnez la quantité souhaitée: ");
+//           quantite = scanner.nextInt();
+//           
+//            Commande commande2 = Constantes.COMMANDE_SERVICE.addCommande(choix, quantite);
+//    	    
+//    	     
+//    	      //On invite l'utilisateur à recommencer ou à quitter
+//    	      do{       
+//    	        System.out.println("Souhaitez-vous ajouter d'autres articles à votre commande?");
+//    	        reponse = scanner.nextLine().charAt(0);
+//    	       
+//    	      }while(reponse != 'O' && reponse != 'N');
+//    	     
+//    	    }while(reponse == 'O');
+//    	    
+//    	  System.out.println("Merci!Votre commande est validée");
+//   }
+   
 }
 
 
