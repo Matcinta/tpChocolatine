@@ -32,7 +32,7 @@ public class Commande {
     private Statut statut;
     
     @OneToMany(mappedBy = "commande")
-   private List<CommandeChoco> commandeChocos = new ArrayList<>();
+    private List<CommandeChoco> commandeChocos = new ArrayList<>();
     
     
    

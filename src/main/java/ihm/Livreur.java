@@ -1,22 +1,37 @@
 package ihm;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
+@Entity
+@Table(name = "livreur")
 public class Livreur {
 
-    
+	@Id
+    @Column (name= "idLivreur")
+    @GeneratedValue (strategy= GenerationType.IDENTITY)
+	private int id;
     private String nom;
     private String prenom;
     
-    private Map<Commande, Integer> commandes = new HashMap<>();
     
     
-    
-    public Livreur(String nom, String prenom) {
+    public Livreur() {
+		super();
+	}
+
+	public Livreur(String nom, String prenom) {
         super();
         this.nom = nom;
         this.prenom = prenom;
@@ -36,17 +51,19 @@ public class Livreur {
         this.prenom = prenom;
     }
 
-    public Map<Commande, Integer> getCommandes() {
-        return commandes;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setCommandes(Map<Commande, Integer> commandes) {
-        this.commandes = commandes;
-    }
-   
-    
-    
-    
-    
-    
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Livreur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
+	}
+  
+	
+	
 }

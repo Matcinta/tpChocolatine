@@ -60,7 +60,7 @@ public class AppChocolatine {
                 break;
 
             case 5:
-                ;
+                creerLivreur();
                 break;
 
             case 6:
@@ -133,7 +133,7 @@ public class AppChocolatine {
         
     }
    
-//   public void creerCommandeMultiple() {
+   public void creerCommandeMultiple() {
 //	   int choix = 0;
 //       int quantite = 0;
 //       char reponse=' ';
@@ -171,8 +171,24 @@ public class AppChocolatine {
 //    	    }while(reponse == 'O');
 //    	    
 //    	  System.out.println("Merci!Votre commande est validée");
-//   }
+  }
    
+   
+   public void creerLivreur() {
+       
+       scanner.nextLine();
+       System.out.println("Vous souhaitez ajouter un nouveau livreur ");
+       System.out.println("Saisir le nom du livreur: ");
+       String nom = scanner.nextLine();
+       
+       System.out.println("Saisir le prénom: ");
+       String prenom = scanner.nextLine();
+
+       Livreur l = Constantes.LIVREUR_SERVICE.addLivreur(nom, prenom);
+       
+       System.out.println(l);
+
+   }
 }
 
 
