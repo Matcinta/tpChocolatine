@@ -1,12 +1,14 @@
 package ihm;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,6 +26,11 @@ public class Livreur {
 	private int id;
     private String nom;
     private String prenom;
+    
+    //chercher explications sur ces lignes
+    @OneToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST },
+    	      fetch = FetchType.LAZY, mappedBy = "livreur")
+    	   private List<Commande> commandes;
     
     
     
@@ -57,6 +64,16 @@ public class Livreur {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	
+
+	public List<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
 	}
 
 	@Override

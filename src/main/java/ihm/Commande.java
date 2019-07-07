@@ -14,6 +14,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -34,7 +36,9 @@ public class Commande {
     @OneToMany(mappedBy = "commande")
     private List<CommandeChoco> commandeChocos = new ArrayList<>();
     
-    
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "livreur")
+    private Livreur livreur;
    
     
     
@@ -80,6 +84,16 @@ public class Commande {
     public void setStatut(Statut statut) {
         this.statut = statut;
     }
+
+
+	public Livreur getLivreur() {
+		return livreur;
+	}
+
+
+	public void setLivreur(Livreur livreur) {
+		this.livreur = livreur;
+	}
 
 
    

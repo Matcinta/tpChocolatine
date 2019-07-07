@@ -25,6 +25,9 @@ public class CommandeChoco {
     @ManyToOne
     @JoinColumn (name="idCommande")
     private Commande commande;
+    @ManyToOne
+    @JoinColumn (name="idLivreur")
+    private Livreur livreur;
     private int quantite;
     
     

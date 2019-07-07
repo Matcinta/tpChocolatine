@@ -1,11 +1,12 @@
 package service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-
+import ihm.Commande;
 import ihm.Livreur;
 import util.Constantes;
 
@@ -30,6 +31,7 @@ private List<Livreur> listeLivreur;
         
         Livreur livreur = new Livreur(nom, prenom);
         
+        
         EntityTransaction tx = em.getTransaction();
         
         tx.begin();
@@ -47,4 +49,14 @@ private List<Livreur> listeLivreur;
     public List<Livreur> findAll() {
         return listeLivreur;
         }
+    
+    
+    
+    public void addCommande(Commande c) {
+	      if (commandes == null) {
+	         commandes = new ArrayList<>();
+	      }
+	      commandes.add(c);
+	      c.setLivreur(this);
+	   }
     }

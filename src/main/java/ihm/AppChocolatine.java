@@ -29,7 +29,10 @@ public class AppChocolatine {
         System.out.println("----------------- Bienvenue Chez les Chocolatines de Glen -----------------");
         while (choix != 7) {
 
-            System.out.println("\t1. Lister les Chocolatines");
+        	
+        	System.out.println("---------------------------------------------------------------------------");
+        	System.out.println("Que souhaitez-vous faire? :");
+        	System.out.println("\t1. Lister les Chocolatines");
             System.out.println("\t2. Créer une chocolatine");
             System.out.println("\t3. Créer une commande");
             System.out.println("\t4. Top 5 des chocolatines");
@@ -37,7 +40,7 @@ public class AppChocolatine {
             System.out.println("\t6. Affecter un livreur a une commande");
             System.out.println("\t7. Quitter");
             System.out.println("---------------------------------------------------------------------------");
-            System.out.println("Que souhaitez-vous faire? :");
+            System.out.println("Veuillez saisir votre choix:");
             choix = scanner.nextInt();
 
             switch (choix) {
@@ -189,6 +192,13 @@ public class AppChocolatine {
        System.out.println(l);
 
    }
+
+   public void ajouterCommandeToLivreur() {
+	
+	   Livreur l = Constantes.LIVREUR_SERVICE.;
+   }
+
+
 }
 
 
